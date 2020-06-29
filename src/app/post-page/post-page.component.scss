@@ -1,0 +1,20 @@
+.post {
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    margin-bottom: .5rem;
+  }
+
+  .info {
+    strong {
+      margin-bottom: 1rem;
+      display: inline-block;
+      margin-right: .5rem;
+    }
+  }
+}
