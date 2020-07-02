@@ -42,7 +42,6 @@ export class AuthService {
     const {message} = error.error.error;
     switch (message) {
       case 'INVALID_EMAIL':
-        console.log(message);
         this.error$.next('Invalid email');
         break;
       case 'INVALID_PASSWORD':
