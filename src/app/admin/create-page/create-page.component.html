@@ -1,14 +1,15 @@
 <form class="card" [formGroup]="form" (ngSubmit)="submit()">
   <h1>Create New Post</h1>
+
   <div
     class="form-control"
-    [ngClass]="form.get('title').touched&&form.get('title').invalid">
+    [ngClass]="{invalid:form.get('title').touched&&form.get('title').invalid}">
     <label for="title">Title Name:</label>
     <input type="text" id="title" formControlName="title">
     <div
       *ngIf="form.get('title').touched&&form.get('title').invalid"
       class="validation">
-      <small *ngIf="form.get('title').errors.required">Email is required</small>
+      <small *ngIf="form.get('title').errors.required">Title is required</small>
     </div>
   </div>
 
@@ -19,7 +20,7 @@
 
   <div
     class="form-control"
-    [ngClass]="form.get('author').touched&&form.get('author').invalid">
+    [ngClass]="{invalid:form.get('author').touched&&form.get('author').invalid}">
     <label for="author">Author:</label>
     <input type="text" id="author" formControlName="author">
     <div
