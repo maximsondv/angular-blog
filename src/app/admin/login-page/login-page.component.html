@@ -1,4 +1,4 @@
-<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()">
   <h2>Login to admin panel</h2>
   <div class="alert alert-danger" *ngIf="auth.error$|async as error">{{error}}</div>
   <div class="alert alert-info" *ngIf="message">{{message}}</div>
