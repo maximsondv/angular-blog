@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {FbCreateResponse, Post} from '../admin/shared/interfaces';
 import {environment} from '../../environments/environment';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
@@ -38,6 +38,9 @@ export class PostsService {
 
   getById(id: string): Observable<Post> {
     return this.http.get<Post>(`${environment.fbDbUrl}/posts/${id}.json`).pipe(
+      tap(post => {
+        console.log(id, 'sdfsdf');
+      }),
       map((post: Post) => {
         return {
           ...post,
